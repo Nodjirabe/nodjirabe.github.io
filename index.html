@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="KASI Energy — centrales solaires photovoltaïques à Lubumbashi. Audit, conception, installation, exploitation et maintenance en location longue durée, avec option d'achat.">
+<meta name="theme-color" content="#04342C">
+<meta property="og:title" content="KASI Energy — Centrales solaires photovoltaïques">
+<meta property="og:description" content="L'énergie qui vous met en mouvement. Audit, conception, installation, exploitation et maintenance. Lubumbashi, RDC.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.kasienergy.com/">
+<title>KASI Energy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{
+  --ink:#04342C;
+  --ink-2:#0F6E56;
+  --green:#1D9E75;
+  --green-soft:#C8EFE3;
+  --amber:#EF9F27;
+  --cream:#F4F2EB;
+  --paper:#FFFFFF;
+  --slate:#4B5A54;
+  --slate-2:#6E7B75;
+  --line:#DCDDD2;
+  --bg:#F4F2EB;
+  --surface:#FFFFFF;
+  --text:#1E2A26;
+  --text-dim:#5C6B65;
+  --head:#04342C;
+  --band:#04342C;
+  --band-text:#FFFFFF;
+  --band-dim:#9FE1CB;
+  --shadow:0 1px 2px rgba(4,52,44,.06), 0 8px 24px rgba(4,52,44,.06);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0A1A16;
+    --surface:#10241E;
+    --text:#E6EFEA;
+    --text-dim:#9FB3AB;
+    --head:#C8EFE3;
+    --line:#224036;
+    --slate:#9FB3AB;
+    --slate-2:#7E948B;
+    --green-soft:#16332B;
+    --band:#04342C;
+    --band-text:#FFFFFF;
+    --band-dim:#9FE1CB;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.3);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0A1A16;
+  --surface:#10241E;
+  --text:#E6EFEA;
+  --text-dim:#9FB3AB;
+  --head:#C8EFE3;
+  --line:#224036;
+  --slate:#9FB3AB;
+  --slate-2:#7E948B;
+  --green-soft:#16332B;
+  --band:#04342C;
+  --band-text:#FFFFFF;
+  --band-dim:#9FE1CB;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.3);
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:"Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  font-size:17px;
+  line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{font-family:"Archivo","Arial Narrow",Arial,sans-serif;color:var(--head);margin:0;text-wrap:balance;letter-spacing:-.018em;line-height:1.1}
+h1{font-weight:800;font-size:clamp(2.1rem,6vw,3.6rem)}
+h2{font-weight:700;font-size:clamp(1.5rem,3.6vw,2.1rem)}
+h3{font-weight:700;font-size:1.12rem;letter-spacing:-.01em}
+p{margin:0}
+a{color:inherit}
+ul{margin:0;padding:0;list-style:none}
+
+.eyebrow{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:.7rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--green);
+}
+.wrap{width:100%;max-width:1060px;margin:0 auto;padding-inline:20px}
+.narrow{max-width:720px}
+
+/* ---------- header ---------- */
+header.site{
+  position:sticky;top:env(safe-area-inset-top,0px);z-index:50;
+  background:var(--band);color:var(--band-text);
+  border-bottom:1px solid rgba(255,255,255,.1);
+}
+.bar{display:flex;align-items:center;gap:18px;min-height:62px;flex-wrap:wrap;padding-block:8px}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;flex-shrink:0}
+.brand .mark{width:19px;height:31px;flex-shrink:0}
+.brand .wordmark{display:flex;flex-direction:column;gap:2px;line-height:1}
+.brand .wordmark b{font-family:"Archivo",sans-serif;font-weight:800;font-size:1.06rem;letter-spacing:.16em;color:#fff}
+.brand .wordmark i{font-family:"Archivo",sans-serif;font-style:normal;font-weight:400;font-size:.56rem;letter-spacing:.42em;color:var(--band-dim)}
+nav.main{display:flex;gap:2px;flex-wrap:wrap;margin-left:auto}
+nav.main a{
+  font-family:"Archivo",sans-serif;font-size:.82rem;font-weight:600;letter-spacing:.01em;
+  text-decoration:none;color:rgba(255,255,255,.62);
+  padding:7px 11px;border-radius:3px;border-bottom:2px solid transparent;
+}
+nav.main a:hover{color:#fff;background:rgba(255,255,255,.07)}
+nav.main a.on{color:#fff;border-bottom-color:var(--green)}
+nav.main a:focus-visible,.brand:focus-visible,.btn:focus-visible,a:focus-visible,button:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+
+/* ---------- hero ---------- */
+.hero{background:var(--band);color:#fff;padding-block:clamp(42px,7vw,78px) clamp(38px,6vw,66px)}
+.hero h1{color:#fff;max-width:17ch}
+.hero .lede{color:var(--band-dim);font-size:clamp(1.02rem,2.2vw,1.22rem);max-width:56ch;margin-top:18px}
+.hero .swahili{margin-top:12px;font-style:italic;font-size:1.02rem;color:var(--green)}
+.hero .eyebrow{color:var(--amber)}
+.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:end}
+@media (max-width:820px){.hero-grid{grid-template-columns:1fr;gap:28px;align-items:start}}
+.hero-facts{display:grid;gap:14px}
+.fact{border-left:2px solid var(--green);padding-left:14px}
+.fact .k{font-family:"IBM Plex Mono",monospace;font-size:1.35rem;font-weight:600;color:var(--amber);line-height:1.2;font-variant-numeric:tabular-nums}
+.fact .v{font-size:.9rem;color:rgba(255,255,255,.72);line-height:1.4}
+
+.cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:"Archivo",sans-serif;font-weight:700;font-size:.9rem;letter-spacing:.005em;
+  text-decoration:none;padding:12px 20px;border-radius:2px;border:1.5px solid transparent;
+  transition:transform .12s ease, background .15s ease;
+}
+.btn.primary{background:var(--green);color:#03211B}
+.btn.primary:hover{background:#25b585}
+.btn.ghost{border-color:rgba(255,255,255,.34);color:#fff}
+.btn.ghost:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+.btn.dark{background:var(--ink);color:#fff}
+.btn.dark:hover{background:var(--ink-2)}
+.btn.outline{border-color:var(--ink);color:var(--head)}
+.btn.outline:hover{background:var(--green-soft)}
+@media (prefers-reduced-motion:no-preference){.btn:hover{transform:translateY(-1px)}}
+
+/* ---------- sections ---------- */
+main{display:block}
+.page{display:none}
+.page.on{display:block}
+section.block{padding-block:clamp(38px,5.5vw,62px)}
+section.block.alt{background:var(--surface);border-block:1px solid var(--line)}
+.sec-head{max-width:64ch;margin-bottom:30px;display:grid;gap:10px}
+.sec-head p{color:var(--text-dim)}
+
+/* rule list — the signature device: a technical fiche */
+.fiche{border-top:1px solid var(--line)}
+.fiche .row{
+  display:grid;grid-template-columns:minmax(150px,210px) 1fr;gap:10px 28px;
+  padding-block:18px;border-bottom:1px solid var(--line);align-items:start;
+}
+@media (max-width:640px){.fiche .row{grid-template-columns:1fr;gap:6px}}
+.fiche .row .lab{
+  font-family:"IBM Plex Mono",monospace;font-size:.74rem;font-weight:500;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--green);padding-top:4px;
+}
+.fiche .row .val p + p{margin-top:8px}
+.fiche .row h3{margin-bottom:5px}
+
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(248px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.card{background:var(--surface);padding:24px 22px;display:flex;flex-direction:column;gap:9px}
+.card .tag{
+  font-family:"IBM Plex Mono",monospace;font-size:.7rem;font-weight:600;letter-spacing:.1em;
+  color:var(--amber);
+}
+.card p{font-size:.95rem;color:var(--text-dim)}
+.card ul{display:grid;gap:5px;margin-top:2px}
+.card li{font-size:.9rem;color:var(--text-dim);padding-left:15px;position:relative}
+.card li::before{content:"";position:absolute;left:0;top:.62em;width:6px;height:1.5px;background:var(--green)}
+
+.steps{display:grid;gap:1px;background:var(--line);border:1px solid var(--line)}
+.step{background:var(--surface);padding:22px;display:grid;grid-template-columns:44px 1fr;gap:18px;align-items:start}
+.step .n{
+  font-family:"IBM Plex Mono",monospace;font-size:1.5rem;font-weight:600;color:var(--green-soft);
+  line-height:1;padding-top:2px;
+}
+:root[data-theme="dark"] .step .n,:root:not([data-theme="light"]) .step .n{color:var(--green)}
+@media (prefers-color-scheme: light){:root:not([data-theme="dark"]) .step .n{color:#9FD9C6}}
+.step p{font-size:.95rem;color:var(--text-dim);margin-top:4px}
+
+.note{
+  background:var(--green-soft);border-left:3px solid var(--green);
+  padding:16px 20px;font-size:.93rem;color:var(--text);
+}
+:root[data-theme="dark"] .note,:root:not([data-theme="light"]) .note{color:var(--text)}
+.note strong{color:var(--head)}
+
+.pill-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.pill{
+  font-family:"IBM Plex Mono",monospace;font-size:.7rem;letter-spacing:.06em;
+  border:1px solid var(--line);padding:4px 10px;color:var(--text-dim);border-radius:2px;
+}
+
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:34px}
+@media (max-width:780px){.two-col{grid-template-columns:1fr;gap:26px}}
+
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:34px}
+@media (max-width:780px){.contact-grid{grid-template-columns:1fr}}
+label{display:block;font-family:"IBM Plex Mono",monospace;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin-bottom:6px}
+input,textarea,select{
+  width:100%;font-family:inherit;font-size:.96rem;color:var(--text);
+  background:var(--surface);border:1px solid var(--line);border-radius:2px;padding:10px 12px;
+}
+input:focus,textarea:focus,select:focus{outline:2px solid var(--green);outline-offset:-1px;border-color:var(--green)}
+.field{margin-bottom:16px}
+.contact-list{display:grid;gap:18px;border-top:1px solid var(--line)}
+.contact-list .item{padding-top:16px;border-bottom:1px solid var(--line);padding-bottom:16px}
+.contact-list .item:last-child{border-bottom:none}
+.contact-list a{color:var(--head);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--green)}
+.contact-list a:hover{background:var(--green-soft)}
+
+footer.site{background:var(--band);color:rgba(255,255,255,.62);padding-block:40px 30px;font-size:.87rem}
+footer.site h4{color:#fff;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;font-family:"IBM Plex Mono",monospace;font-weight:500;margin-bottom:12px}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:34px}
+@media (max-width:760px){.foot-grid{grid-template-columns:1fr;gap:26px}}
+footer.site a{color:rgba(255,255,255,.72);text-decoration:none}
+footer.site a:hover{color:#fff;text-decoration:underline}
+footer.site ul{display:grid;gap:7px}
+.legal{margin-top:30px;padding-top:18px;border-top:1px solid rgba(255,255,255,.13);font-size:.78rem;color:rgba(255,255,255,.45);display:grid;gap:6px}
+.todo{color:var(--amber)}
+</style>
+<style>html,body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+
+
+<header class="site">
+  <div class="wrap bar">
+    <a class="brand" href="#accueil" aria-label="KASI Energy — accueil">
+      <svg class="mark" viewBox="0 0 23 38" aria-hidden="true">
+        <rect x="0" y="0" width="6" height="38" rx="2" fill="#FFFFFF"/>
+        <polygon points="6,13 22,0 19,7 11,13" fill="#FFFFFF"/>
+        <polygon points="6,25 23,38 20,31 11,25" fill="#FFFFFF"/>
+        <rect x="10" y="13" width="11" height="11" rx="1.5" fill="#1D9E75"/>
+        <line x1="15.5" y1="13" x2="15.5" y2="24" stroke="#04342C" stroke-width=".9" opacity=".5"/>
+        <line x1="10" y1="18.5" x2="21" y2="18.5" stroke="#04342C" stroke-width=".9" opacity=".5"/>
+      </svg>
+      <span class="wordmark"><b>KASI</b><i>ENERGY</i></span>
+    </a>
+    <nav class="main" id="nav">
+      <a href="#accueil">Accueil</a>
+      <a href="#lld">Offre LLD</a>
+      <a href="#b2b">Entreprises &amp; institutions</a>
+      <a href="#methode">Notre méthode</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- ══════════════════════════ ACCUEIL ══════════════════════════ -->
+<div class="page" id="page-accueil">
+  <div class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow">Centrales solaires photovoltaïques · Lubumbashi, RDC</div>
+        <h1>L'énergie qui vous met en mouvement.</h1>
+        <p class="swahili">Kasi ya jua — la puissance du soleil</p>
+        <p class="lede">KASI Energy audite votre consommation, conçoit votre centrale solaire, l'installe, l'exploite et l'entretient. Vous ne payez pas le matériel : vous payez un loyer mensuel, avec une option d'achat à l'échéance du contrat.</p>
+        <div class="cta-row">
+          <a class="btn primary" href="#contact">Demander une étude de site</a>
+          <a class="btn ghost" href="#b2b">Offres entreprises</a>
+        </div>
+      </div>
+      <ul class="hero-facts">
+        <li class="fact">
+          <div class="k">0 USD</div>
+          <div class="v">d'investissement initial en matériel — le système reste la propriété de KASI Energy pendant toute la durée du contrat.</div>
+        </li>
+        <li class="fact">
+          <div class="k">4,7 h/j</div>
+          <div class="v">d'ensoleillement utile : nous dimensionnons sur la saison des pluies à Lubumbashi, jamais sur la moyenne annuelle.</div>
+        </li>
+        <li class="fact">
+          <div class="k">LiFePO4</div>
+          <div class="v">exclusivement. Pas de batteries plomb ou AGM, quelle que soit l'économie apparente à l'achat.</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <section class="block">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow">Le problème</div>
+        <h2>Le groupe électrogène coûte plus cher chaque année. Le délestage, lui, ne s'améliore pas.</h2>
+        <p>Un commerce, une clinique ou un atelier de Lubumbashi paie son autonomie électrique trois fois : le carburant, l'entretien du groupe, et l'activité perdue pendant les coupures. Le solaire résout ce calcul — à condition d'être correctement dimensionné, correctement installé, et maintenu après la mise en service. C'est exactement là que la plupart des installations échouent.</p>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <div class="tag">01 — DIESEL</div>
+          <h3>Un coût qui suit le prix du carburant</h3>
+          <p>Chaque heure de fonctionnement a un coût direct, que le prix du gasoil rend imprévisible d'un trimestre à l'autre.</p>
+        </div>
+        <div class="card">
+          <div class="tag">02 — INVESTISSEMENT</div>
+          <h3>Un solaire acheté comptant immobilise la trésorerie</h3>
+          <p>L'achat d'un système complet ponctionne le fonds de roulement au moment précis où l'entreprise en a besoin ailleurs.</p>
+        </div>
+        <div class="card">
+          <div class="tag">03 — APRÈS-VENTE</div>
+          <h3>Sans maintenance, un système solaire se dégrade</h3>
+          <p>Panneaux encrassés, batteries mal gérées, défauts non détectés : une installation sans suivi perd sa production silencieusement.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block alt">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow">Notre réponse</div>
+        <h2>Une centrale solaire en location longue durée</h2>
+        <p>KASI Energy finance, conçoit, installe et exploite la centrale. Le client paie un loyer pour un service d'énergie — pas un équipement. La maintenance, la supervision et le remplacement des composants défaillants sont inclus dans le contrat, pas facturés en plus. À l'échéance, une option d'achat lui permet de reprendre l'installation.</p>
+      </div>
+      <div class="steps">
+        <div class="step"><div class="n">01</div><div><h3>Audit du site</h3><p>Relevé de la consommation réelle, identification des charges critiques, analyse d'ombrage et mesure de la résistivité du sol pour la mise à la terre. Aucun devis n'est émis avant ce rapport.</p></div></div>
+        <div class="step"><div class="n">02</div><div><h3>Conception et proposition technique</h3><p>Architecture technique chiffrée sur votre profil de charge, avec le niveau de service (disponibilité garantie, délai d'intervention) associé à votre segment.</p></div></div>
+        <div class="step"><div class="n">03</div><div><h3>Installation et mise en service</h3><p>Installation par nos techniciens, mise à la terre mesurée, protections conformes, remise du dossier d'installation et formation à l'usage du système.</p></div></div>
+        <div class="step"><div class="n">04</div><div><h3>Exploitation et loyer mensuel</h3><p>Paiement via Airtel Money. Supervision à distance, maintenance préventive et interventions correctives pendant toute la durée du contrat.</p></div></div>
+        <div class="step"><div class="n">05</div><div><h3>Option d'achat à l'échéance</h3><p>Au terme du contrat, vous pouvez reprendre l'installation. Le prix et les conditions de levée de l'option sont fixés au contrat signé au départ, pas négociés à l'échéance.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow">Segments desservis</div>
+        <h2>Du ménage au site industriel</h2>
+        <p>Six architectures techniques distinctes, chacune avec ses exigences de protection, de supervision et de niveau de service.</p>
+      </div>
+      <div class="fiche">
+        <div class="row"><div class="lab">S1 · S2</div><div class="val"><h3>Résidentiel — 30 Wc à 1 000 Wc</h3><p>Kit solaire intégré ou système avec câblage intérieur complet, éclairage LED, prises 220 V et réfrigération. Paiement fractionné par token.</p></div></div>
+        <div class="row"><div class="lab">S3</div><div class="val"><h3>PME &amp; commerces — 1,2 à 6 kWc</h3><p>Onduleur hybride 48 V acceptant le réseau et le groupe électrogène comme sources secondaires, supervision à distance, engagement de disponibilité contractuel.</p></div></div>
+        <div class="row"><div class="lab">S4</div><div class="val"><h3>Institutions — 5 à 20 kWc</h3><p>Cliniques, hôtels, banques, établissements scolaires. Onduleurs en parallèle, hiérarchisation des circuits critiques, supervision 24/7.</p></div></div>
+        <div class="row"><div class="lab">S5</div><div class="val"><h3>Mines &amp; industrie — 30 à 100 kWc</h3><p>Triphasé 400 V, intégration au groupe existant par inverseur automatique, SCADA industriel et rapport mensuel de CO₂ évité pour le reporting ESG.</p></div></div>
+        <div class="row"><div class="lab">S6</div><div class="val"><h3>Tours télécom BTS — 3 à 8 kWc</h3><p>Autonomie batterie de 48 heures, supervision distante 4G, contrat cadre multi-sites.</p></div></div>
+      </div>
+      <div class="cta-row">
+        <a class="btn dark" href="#b2b">Voir les offres entreprises</a>
+        <a class="btn outline" href="#lld">Voir l'offre résidentielle</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ══════════════════════════ LLD RÉSIDENTIEL ══════════════════════════ -->
+<div class="page" id="page-lld">
+  <div class="hero">
+    <div class="wrap">
+      <div class="eyebrow">Particuliers — segments S1 et S2</div>
+      <h1>Payez votre électricité comme vous rechargez votre téléphone.</h1>
+      <p class="lede">Le système est installé chez vous sans achat de matériel. Vous l'activez par crédit, depuis votre téléphone, avec Airtel Money. Tant que le contrat court, la maintenance est à notre charge.</p>
+    </div>
+  </div>
+
+  <section class="block">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow">Comment ça marche</div>
+        <h2>Le paiement à l'usage, sans connexion permanente</h2>
+        <p>Nos systèmes utilisent OpenPAYGO Token, un standard ouvert de l'écosystème EnAccess. Concrètement : vous payez par Airtel Money, vous recevez un code, vous le saisissez sur l'unité. Le système fonctionne ensuite sans aucune connexion réseau — le code seul suffit à activer le crédit.</p>
+      </div>
+      <div class="steps">
+        <div class="step"><div class="n">01</div><div><h3>Vous payez depuis votre téléphone</h3><p>Paiement Airtel Money, du montant correspondant à la période que vous souhaitez activer.</p></div></div>
+        <div class="step"><div class="n">02</div><div><h3>Vous recevez un code</h3><p>Un code numérique unique, valable pour votre appareil et lui seul.</p></div></div>
+        <div class="step"><div class="n">03</div><div><h3>Vous saisissez le code sur l'unité</h3><p>Le crédit s'active immédiatement. Le témoin de l'unité affiche le crédit restant et l'état de charge de la batterie.</p></div></div>
+        <div class="step"><div class="n">04</div><div><h3>À l'échéance du contrat</h3><p>Vous levez l'option d'achat et le système vous appartient, ou le contrat est renouvelé. Le prix de l'option figure au contrat qui vous est remis avant signature — il n'est pas fixé au moment de l'échéance.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block alt">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow">Ce qui est installé</div>
+        <h2>Deux niveaux d'équipement</h2>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <div class="tag">S1 · 30 À 200 Wc</div>
+          <h3>Kit solaire intégré</h3>
+          <p>Un système tout-en-un en 12 ou 24 V continu, pour l'éclairage, la recharge de téléphones et la radio ou la télévision selon le kit.</p>
+          <ul>
+            <li>3 à 5 points lumineux LED, interrupteur sur chaque ligne</li>
+            <li>Port USB 5 V / 2 A pour la recharge des téléphones</li>
+            <li>Batterie LiFePO4 avec deux nuits d'autonomie</li>
+            <li>Régulateur MPPT, pas de PWM</li>
+            <li>Certification GOGLA Quality Verified exigée sur chaque kit</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="tag">S2 · 400 À 1 000 Wc</div>
+          <h3>Installation avec câblage complet</h3>
+          <p>Un système 24 ou 48 V avec onduleur, tableau de distribution et câblage intérieur de la maison en 220 V.</p>
+          <ul>
+            <li>Éclairage plafonnier, prises 220 V et prises USB murales</li>
+            <li>Réfrigérateur et, sur les configurations les plus larges, climatisation</li>
+            <li>Différentiel 30 mA sur chaque circuit, parafoudres côté continu et alternatif</li>
+            <li>Mise à la terre mesurée à moins de 1 ohm</li>
+            <li>Batteries LiFePO4 dimensionnées sur deux nuits d'autonomie</li>
+          </ul>
+        </div>
+      </div>
+      <div class="note" style="margin-top:22px">
+        <strong>Le dimensionnement, sans raccourci.</strong> La puissance est calculée à partir de votre consommation réelle divisée par 4,7 heures d'ensoleillement utile — la valeur de la saison des pluies à Lubumbashi. Dimensionner sur la moyenne annuelle donne un système qui déçoit six mois par an. C'est l'erreur la plus fréquente du marché, et nous ne la faisons pas.
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap narrow">
+      <div class="sec-head">
+        <div class="eyebrow">Conditions d'éligibilité</div>
+        <h2>Ce que nous vérifions avant d'installer</h2>
+        <p>La location longue durée engage les deux parties sur plusieurs années. Nous vérifions quatre points avant toute signature — et nous le faisons dans votre intérêt autant que dans le nôtre.</p>
+      </div>
+      <div class="fiche">
+        <div class="row"><div class="lab">01</div><div class="val"><p>Un compte Airtel Money actif et utilisé récemment.</p></div></div>
+        <div class="row"><div class="lab">02</div><div class="val"><p>Un domicile stable et vérifiable, occupé depuis au moins six mois.</p></div></div>
+        <div class="row"><div class="lab">03</div><div class="val"><p>Une source de revenu régulière, même informelle — aucun justificatif formel n'est exigé.</p></div></div>
+        <div class="row"><div class="lab">04</div><div class="val"><p>Un statut de propriétaire ou de locataire de longue durée du logement.</p></div></div>
+      </div>
+      <div class="cta-row">
+        <a class="btn dark" href="#contact">Prendre contact</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ══════════════════════════ B2B ══════════════════════════ -->
+<div class="page" id="page-b2b">
+  <div class="hero">
+    <div class="wrap">
+      <div class="eyebrow">Entreprises · Institutions · Industrie</div>
+      <h1>Un contrat d'énergie, pas une facture d'équipement.</h1>
+      <p class="lede">Pour une entreprise, le solaire n'a d'intérêt que s'il est mesurable : disponibilité garantie, délai d'intervention contractuel, production vérifiable. Nos contrats B2B sont construits autour de ces trois engagements.</p>
+      <div class="cta-row">
+        <a class="btn primary" href="#contact">Demander une étude de site</a>
+      </div>
+    </div>
+  </div>
+
+  <section class="block">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow">Trois marchés prioritaires</div>
+        <h2>Ce que nous proposons, par type de client</h2>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <div class="tag">TERTIAIRE · S3 / S4</div>
+          <h3>Banques, hôtels, cliniques, écoles</h3>
+          <p>Remplacer le fonctionnement quotidien du groupe électrogène par une production solaire stockée, en gardant le groupe en secours.</p>
+          <ul>
+            <li>Onduleur hybride acceptant réseau et groupe comme sources</li>
+            <li>Basculement en moins de 20 ms — pas de coupure perçue</li>
+            <li>Hiérarchisation des circuits : ce qui ne doit jamais s'arrêter reste alimenté en priorité</li>
+            <li>Supervision à distance et rapport mensuel de production</li>
+          </ul>
+          <div class="pill-row"><span class="pill">Disponibilité ≥ 98 %</span><span class="pill">Intervention &lt; 48 h</span></div>
+        </div>
+        <div class="card">
+          <div class="tag">INSTITUTIONS · S4</div>
+          <h3>ONG, bailleurs, administrations</h3>
+          <p>Des installations documentées et auditables, conformes aux exigences de reporting des financements internationaux.</p>
+          <ul>
+            <li>Rapport d'étude de site signé avant tout engagement</li>
+            <li>Circuits critiques identifiés et protégés du délestage</li>
+            <li>Journal d'événements conservé douze mois minimum</li>
+            <li>Rapport trimestriel de CO₂ évité</li>
+          </ul>
+          <div class="pill-row"><span class="pill">Disponibilité ≥ 99 %</span><span class="pill">Intervention &lt; 24 h</span></div>
+        </div>
+        <div class="card">
+          <div class="tag">INDUSTRIE &amp; TÉLÉCOM · S5 / S6</div>
+          <h3>Sites industriels, ateliers, tours BTS</h3>
+          <p>Triphasé 400 V pour les sites industriels, 48 V continu pour les tours télécom, avec supervision permanente dans les deux cas.</p>
+          <ul>
+            <li>Intégration au groupe existant par inverseur automatique verrouillé</li>
+            <li>SCADA industriel, alertes SMS en moins de deux minutes</li>
+            <li>Tours BTS : 48 heures d'autonomie batterie, contrat cadre multi-sites</li>
+            <li>Rapport mensuel de CO₂ évité, exploitable en scope 3</li>
+          </ul>
+          <div class="pill-row"><span class="pill">BTS : disponibilité ≥ 99,5 %</span><span class="pill">Intervention &lt; 12 h</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block alt">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow">Engagements contractuels</div>
+        <h2>Ce qui est écrit dans le contrat</h2>
+        <p>Un engagement de service qui n'est pas mesuré n'est pas un engagement. Chaque contrat B2B précise l'indicateur, la méthode de mesure et la conséquence d'un dépassement.</p>
+      </div>
+      <div class="fiche">
+        <div class="row"><div class="lab">Disponibilité</div><div class="val"><p>Un taux de disponibilité garanti, fixé selon le segment : 98 % pour les PME et commerces, 99 % pour les institutions, 99,5 % pour les tours télécom. Pour une tour BTS, 99,5 % signifie au maximum 4,4 heures d'arrêt cumulées sur l'année.</p></div></div>
+        <div class="row"><div class="lab">Intervention</div><div class="val"><p>Un délai maximal d'intervention sur site après déclenchement d'une alerte, de 12 à 48 heures selon le segment, avec les pièces critiques tenues en stock à Lubumbashi.</p></div></div>
+        <div class="row"><div class="lab">Supervision</div><div class="val"><p>Supervision à distance permanente, alertes automatiques par SMS et courriel en cas de défaut, et accès en lecture au tableau de bord partagé avec le client.</p></div></div>
+        <div class="row"><div class="lab">Reporting</div><div class="val"><p>Rapport mensuel : énergie produite, taux de disponibilité constaté, incidents et interventions. Pour les clients qui en ont l'usage, calcul du CO₂ évité par rapport à la référence diesel.</p></div></div>
+        <div class="row"><div class="lab">Maintenance</div><div class="val"><p>Maintenance préventive programmée, au minimum deux fois par an sur les installations institutionnelles, et test périodique du groupe de secours là où il est intégré.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow">Avant le devis</div>
+        <h2>L'étude de site n'est pas une formalité</h2>
+        <p>Nous ne chiffrons pas une installation sur la base d'une facture d'électricité ou d'une liste d'appareils. Le devis est établi sur des mesures.</p>
+      </div>
+      <div class="two-col">
+        <div class="fiche">
+          <div class="row"><div class="lab">Mesure</div><div class="val"><p>Relevé de consommation à l'analyseur de réseau : 7 jours pour un site tertiaire, 15 jours pour un site industriel, avec profil de puissance au pas de 15 minutes.</p></div></div>
+          <div class="row"><div class="lab">Charges</div><div class="val"><p>Identification des charges sensibles aux coupures et des équipements à fort courant de démarrage.</p></div></div>
+        </div>
+        <div class="fiche">
+          <div class="row"><div class="lab">Site</div><div class="val"><p>Étude d'ombrage du champ photovoltaïque et vérification de la structure de toiture ou de la surface au sol disponible.</p></div></div>
+          <div class="row"><div class="lab">Sécurité</div><div class="val"><p>Mesure de la résistivité du sol pour dimensionner la mise à la terre, et analyse de la qualité du réseau existant.</p></div></div>
+        </div>
+      </div>
+      <div class="note" style="margin-top:24px">
+        <strong>Le rapport d'étude vous est remis signé, que vous contractiez ou non avec nous.</strong> Il documente votre consommation réelle et vos circuits critiques — une information qui vous appartient et qui vous sert, quelle que soit la suite.
+      </div>
+      <div class="cta-row">
+        <a class="btn dark" href="#contact">Demander une étude de site</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ══════════════════════════ MÉTHODE ══════════════════════════ -->
+<div class="page" id="page-methode">
+  <div class="hero">
+    <div class="wrap">
+      <div class="eyebrow">Notre méthode</div>
+      <h1>Nous mesurons avant d'affirmer.</h1>
+      <p class="lede">Le marché solaire congolais ne manque pas d'installateurs. Il manque d'opérateurs qui restent responsables du système une fois la facture payée. C'est la place que KASI Energy occupe.</p>
+    </div>
+  </div>
+
+  <section class="block">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow">Principe de conception</div>
+        <h2>Trois règles techniques dont nous ne dérogeons pas</h2>
+      </div>
+      <div class="fiche">
+        <div class="row">
+          <div class="lab">Règle 1</div>
+          <div class="val"><h3>Dimensionner sur la saison des pluies</h3><p>Le calcul de puissance retient 4,7 heures d'ensoleillement utile par jour, la valeur critique de Lubumbashi, et non la moyenne annuelle plus flatteuse. Un système dimensionné sur la moyenne fonctionne bien en saison sèche et déçoit le reste de l'année.</p></div>
+        </div>
+        <div class="row">
+          <div class="lab">Règle 2</div>
+          <div class="val"><h3>LiFePO4 uniquement, avec certification</h3><p>Les batteries doivent être au lithium fer phosphate, avec système de gestion intégré et certifications IEC 62619 et UN 38.3. Nous refusons les batteries plomb, AGM, et les batteries lithium sans BMS certifié — quelle que soit l'économie proposée à l'achat.</p></div>
+        </div>
+        <div class="row">
+          <div class="lab">Règle 3</div>
+          <div class="val"><h3>Les protections ne sont pas une option de devis</h3><p>Différentiel 30 mA, parafoudres côté continu et alternatif, sectionnement accessible, mise à la terre mesurée. Ce sont les premières lignes à disparaître d'un devis concurrent moins cher, et les premières causes d'incendie et d'électrocution sur les installations solaires mal faites.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block alt">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow">Référentiels appliqués</div>
+        <h2>Les normes auxquelles nos installations se conforment</h2>
+        <p>Ces référentiels sont ceux que nous imposons à nos fournisseurs et que nous appliquons sur chantier. Ils sont vérifiables, et nous les indiquons sur chaque proposition technique.</p>
+      </div>
+      <div class="cards">
+        <div class="card"><div class="tag">MODULES</div><h3>IEC 61215 · IEC 61730</h3><p>Qualification de conception et sécurité des modules photovoltaïques.</p></div>
+        <div class="card"><div class="tag">BATTERIES</div><h3>IEC 62619 · UN 38.3</h3><p>Sécurité des batteries lithium de stockage et conditions de transport.</p></div>
+        <div class="card"><div class="tag">ONDULEURS</div><h3>IEC 62116</h3><p>Protection de découplage anti-îlotage des onduleurs raccordés au réseau.</p></div>
+        <div class="card"><div class="tag">INSTALLATION</div><h3>IEC 60364</h3><p>Installations électriques basse tension, dont la mise à la terre et les protections différentielles.</p></div>
+        <div class="card"><div class="tag">KITS SOLAIRES</div><h3>GOGLA Quality Verified</h3><p>Référentiel qualité des kits solaires domestiques, exigé sur nos équipements résidentiels.</p></div>
+        <div class="card"><div class="tag">PAIEMENT</div><h3>OpenPAYGO Token</h3><p>Standard ouvert EnAccess d'activation par code, sans dépendance à un fournisseur unique.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap narrow">
+      <div class="sec-head">
+        <div class="eyebrow">Déploiement</div>
+        <h2>Nous commençons par mesurer notre propre terrain</h2>
+        <p>Avant tout déploiement de volume, KASI Energy conduit un programme de douze installations pilotes à Lubumbashi, réparties sur plusieurs quartiers et plusieurs segments de clientèle. Chaque chantier fait l'objet d'un journal documentant le coût réel, le temps d'installation réel et les incidents rencontrés.</p>
+        <p style="margin-top:14px;color:var(--text-dim)">L'objet de ce programme n'est pas commercial. Il est de remplacer, dans nos propres modèles, les références sectorielles kényanes ou rwandaises par des données mesurées à Lubumbashi. Un client qui nous demande combien de temps prend une installation, ou combien coûte réellement la maintenance de son système, mérite un chiffre constaté plutôt qu'une estimation empruntée à un autre marché.</p>
+      </div>
+      <div class="note">
+        <strong>Ce que cela change pour vous.</strong> Nos délais, nos engagements de disponibilité et nos devis sont construits sur ce que nous avons mesuré, pas sur ce que nous espérons. Quand nous ne savons pas encore, nous le disons.
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ══════════════════════════ CONTACT ══════════════════════════ -->
+<div class="page" id="page-contact">
+  <div class="hero">
+    <div class="wrap">
+      <div class="eyebrow">Contact</div>
+      <h1>Parlons de votre site.</h1>
+      <p class="lede">Décrivez-nous votre situation en quelques lignes. Nous revenons vers vous pour convenir d'une visite et d'une étude de site.</p>
+    </div>
+  </div>
+
+  <section class="block">
+    <div class="wrap contact-grid">
+      <div>
+        <h2 style="margin-bottom:22px">Demande d'étude</h2>
+        <form id="contact-form" novalidate>
+          <div class="field">
+            <label for="cf-nom">Nom et prénom</label>
+            <input id="cf-nom" name="nom" type="text" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="cf-org">Organisation (le cas échéant)</label>
+            <input id="cf-org" name="organisation" type="text" autocomplete="organization">
+          </div>
+          <div class="field">
+            <label for="cf-tel">Téléphone ou WhatsApp</label>
+            <input id="cf-tel" name="telephone" type="tel" autocomplete="tel" required>
+          </div>
+          <div class="field">
+            <label for="cf-mail">Adresse e-mail</label>
+            <input id="cf-mail" name="email" type="email" autocomplete="email">
+          </div>
+          <div class="field">
+            <label for="cf-type">Type de site</label>
+            <select id="cf-type" name="type">
+              <option>Domicile</option>
+              <option>Commerce ou atelier</option>
+              <option>Bureau, école, hôtel</option>
+              <option>Clinique ou hôpital</option>
+              <option>ONG, institution, administration</option>
+              <option>Site industriel ou minier</option>
+              <option>Tour télécom</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="cf-msg">Votre situation</label>
+            <textarea id="cf-msg" name="message" rows="5" placeholder="Quartier, surface, équipements à alimenter, heures de coupure habituelles, groupe électrogène existant…"></textarea>
+          </div>
+          <button class="btn primary" type="submit">Envoyer la demande</button>
+          <p id="cf-hint" style="margin-top:12px;font-size:.85rem;color:var(--text-dim)">Le formulaire ouvre votre messagerie avec la demande pré-rédigée.</p>
+        </form>
+      </div>
+
+      <div>
+        <h2 style="margin-bottom:22px">Nous joindre directement</h2>
+        <div class="contact-list">
+          <div class="item">
+            <div class="eyebrow" style="margin-bottom:6px">Direction</div>
+            <p><strong>Caleb NODJIRABE</strong><br>Président, CTO</p>
+          </div>
+          <div class="item">
+            <div class="eyebrow" style="margin-bottom:6px">Téléphone · WhatsApp</div>
+            <p><a href="tel:+33641959611">+33 6 41 95 96 11</a></p>
+          </div>
+          <div class="item">
+            <div class="eyebrow" style="margin-bottom:6px">Courriel</div>
+            <p><a href="mailto:caleb.nodjirabe@kasienergy.com">caleb.nodjirabe@kasienergy.com</a></p>
+          </div>
+          <div class="item">
+            <div class="eyebrow" style="margin-bottom:6px">Lubumbashi — RDC</div>
+            <p>Golf Plateau, Lubumbashi<br>Haut-Katanga, République Démocratique du Congo</p>
+          </div>
+          <div class="item">
+            <div class="eyebrow" style="margin-bottom:6px">Lyon — France</div>
+            <p>Multiburo, Lyon</p>
+          </div>
+          <div class="item">
+            <div class="eyebrow" style="margin-bottom:6px">Paiement</div>
+            <p>Airtel Money · M-Pesa · Virement bancaire</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="brand" style="margin-bottom:12px">
+          <svg class="mark" viewBox="0 0 23 38" aria-hidden="true">
+            <rect x="0" y="0" width="6" height="38" rx="2" fill="#FFFFFF"/>
+            <polygon points="6,13 22,0 19,7 11,13" fill="#FFFFFF"/>
+            <polygon points="6,25 23,38 20,31 11,25" fill="#FFFFFF"/>
+            <rect x="10" y="13" width="11" height="11" rx="1.5" fill="#1D9E75"/>
+            <line x1="15.5" y1="13" x2="15.5" y2="24" stroke="#04342C" stroke-width=".9" opacity=".5"/>
+            <line x1="10" y1="18.5" x2="21" y2="18.5" stroke="#04342C" stroke-width=".9" opacity=".5"/>
+          </svg>
+          <span class="wordmark"><b>KASI</b><i>ENERGY</i></span>
+        </div>
+        <p style="max-width:36ch">Centrales solaires photovoltaïques. Audit, conception, installation, exploitation et maintenance, en location longue durée avec option d'achat.</p>
+        <p style="max-width:34ch;margin-top:10px;color:var(--band-dim);font-style:italic">Kasi ya jua — la puissance du soleil</p>
+      </div>
+      <div>
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="#accueil">Accueil</a></li>
+          <li><a href="#lld">Offre LLD résidentielle</a></li>
+          <li><a href="#b2b">Entreprises &amp; institutions</a></li>
+          <li><a href="#methode">Notre méthode</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+33641959611">+33 6 41 95 96 11</a></li>
+          <li><a href="mailto:caleb.nodjirabe@kasienergy.com">caleb.nodjirabe@kasienergy.com</a></li>
+          <li>Golf Plateau, Lubumbashi — RDC</li>
+          <li>Multiburo, Lyon — France</li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">
+      <div>KASI Energy SARL — Golf Plateau, Lubumbashi (RDC) · Multiburo, Lyon (France) — <span class="todo">[RCCM et ID Nat. à compléter avant mise en ligne]</span></div>
+      <div>Les caractéristiques techniques indiquées sont des exigences minimales de conception. Le dimensionnement définitif, les conditions contractuelles et les tarifs font l'objet d'une proposition établie après étude de site.</div>
+      <div>© <span id="year">2026</span> KASI Energy SARL. Tous droits réservés.</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var pages = ["accueil","lld","b2b","methode","contact"];
+  var nav = document.getElementById("nav");
+
+  function show(id){
+    if (pages.indexOf(id) === -1) id = "accueil";
+    pages.forEach(function(p){
+      var el = document.getElementById("page-" + p);
+      if (el) el.classList.toggle("on", p === id);
+    });
+    Array.prototype.forEach.call(nav.querySelectorAll("a"), function(a){
+      a.classList.toggle("on", a.getAttribute("href") === "#" + id);
+      if (a.classList.contains("on")) a.setAttribute("aria-current","page"); else a.removeAttribute("aria-current");
+    });
+    document.title = "KASI Energy";
+  }
+
+  function route(){
+    var id = (location.hash || "#accueil").slice(1);
+    show(id);
+    window.scrollTo({top:0, behavior:"auto"});
+  }
+
+  window.addEventListener("hashchange", route);
+  route();
+
+  var y = document.getElementById("year");
+  if (y) y.textContent = new Date().getFullYear();
+
+  var form = document.getElementById("contact-form");
+  if (form){
+    form.addEventListener("submit", function(e){
+      e.preventDefault();
+      var d = new FormData(form);
+      var lines = [
+        "Nom : " + (d.get("nom") || ""),
+        "Organisation : " + (d.get("organisation") || ""),
+        "Téléphone / WhatsApp : " + (d.get("telephone") || ""),
+        "E-mail : " + (d.get("email") || ""),
+        "Type de site : " + (d.get("type") || ""),
+        "",
+        "Situation :",
+        (d.get("message") || "")
+      ];
+      var subject = "Demande d'étude de site — " + (d.get("nom") || "site web KASI Energy");
+      window.location.href = "mailto:caleb.nodjirabe@kasienergy.com"
+        + "?subject=" + encodeURIComponent(subject)
+        + "&body=" + encodeURIComponent(lines.join("\n"));
+    });
+  }
+})();
+</script>
+
+</body>
+</html>
